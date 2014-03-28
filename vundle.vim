@@ -1,0 +1,7 @@
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'ervandew/supertab'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
