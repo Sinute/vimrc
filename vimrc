@@ -70,7 +70,7 @@ set fileformats=unix,dos,mac
 " 根据上下文推断缩进
 set smarttab
 " 使用空格代替tab, 长度为4个空格
-" set ts=4
+set tabstop=4
 " set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,6 +84,16 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 " 标签页操作
+if has("win32")
+nnoremap <A-l>  :tabnext<CR>
+inoremap <A-l>  <ESC>:tabnext<CR>
+nnoremap <A-h>  :tabprevious<CR>
+inoremap <A-h>  <ESC>:tabprevious<CR>
+nnoremap <A-t>  :tabnew<CR>
+nnoremap <A-t>  <ESC>:tabnew<CR>i
+nnoremap <A-q>  :tabclose<CR>
+inoremap <A-q>  <Esc>:tabclose<CR>
+else
 nnoremap l  :tabnext<CR>
 inoremap l  <ESC>:tabnext<CR>
 nnoremap h  :tabprevious<CR>
@@ -92,6 +102,7 @@ nnoremap t  :tabnew<CR>
 nnoremap t  <ESC>:tabnew<CR>i
 nnoremap q  :tabclose<CR>
 inoremap q  <Esc>:tabclose<CR>
+endif
 " 目录树
 map <F2> :NERDTreeTabsToggle<CR><C-W>l
 " 自动开启NERDTree
@@ -100,11 +111,12 @@ map <F2> :NERDTreeTabsToggle<CR><C-W>l
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " 设定默认工作目录为vim根目录
-chdir $VIM
+" chdir $VIM
 " 自动切换当前工作目录
 set autochdir
 
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
