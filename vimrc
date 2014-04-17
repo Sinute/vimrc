@@ -7,13 +7,13 @@ let $VIMFILES='/etc/vim/sinute'
 " vundle设置
 " https://github.com/gmarik/vundle.git
 " 载入vundle
-source $VIMFILES/vundle/autoload/vundle.vim
+source $VIMFILES/bundle/vundle/autoload/vundle.vim
 " 把vundle加入到运行时目录
-set rtp+=$VIMFILES/vundle
+set rtp+=$VIMFILES/bundle/vundle
 " 设定插件目录 需要自建插件目录
 call vundle#rc('$VIMFILES/bundle')
 " 插件列表
-source $VIMFILES/vundle.vim
+source $VIMFILES/bundle/vundle.vim
 
 " 指定英文逗号作为<leader>键
 let mapleader=","
@@ -51,7 +51,7 @@ else
 set fileencoding=utf-8
 endif
 " 解决consle输出乱码
-language messages zh_CN.utf-8
+" language messages zh_CN.utf-8
 " 字体
 set guifont=Monaco:h10
 
