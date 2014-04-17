@@ -38,6 +38,8 @@ set smartcase
 set encoding=utf-8
 " set fileencodings=utf-8,chinese,latin-1
 if has("win32")
+" 解决consle输出乱码
+language messages zh_CN.utf-8
 set fileencoding=chinese
 set lines=43 columns=200
 " 隐藏工具栏
